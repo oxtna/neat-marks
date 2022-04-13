@@ -1,0 +1,32 @@
+.button {
+  min-width: 40px;
+  min-height: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  background: var(--ui-color);
+  outline: 0;
+  box-shadow: 0 0 0 0 var(--ui-shadow-color);
+  transition-duration: 0.1s;
+}
+
+.button:focus,
+.button:active:focus {
+  box-shadow: 0 0 0 5px var(--ui-shadow-color);
+}
+
+.button:hover,
+.button:focus {
+  background: var(--ui-focus-color);
+}
+
+.button:active {
+  background: var(--ui-active-color);
+}

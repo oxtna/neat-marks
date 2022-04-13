@@ -1,0 +1,15 @@
+.bookmark-box {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: max-content max-content;
+  padding: 1rem 0;
+}
+
+.bookmark-box>.search-box {
+  align-self: left;
+}
+
+.bookmark-box>.bookmark-list-container {
+  margin-top: 1rem;
+  grid-column: 1 / span 2;
+}

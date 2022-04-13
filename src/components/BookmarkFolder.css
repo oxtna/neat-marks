@@ -1,0 +1,18 @@
+.bookmark-folder {
+  list-style-type: none;
+  width: 70%;
+}
+
+.bookmark-folder p {
+  margin: 0;
+}
+
+.bookmark-folder button {
+  border: 0;
+  background-color: white;
+}
+
+.bookmark-folder button:hover {
+  background-color: hotpink;
+  cursor: pointer;
+}

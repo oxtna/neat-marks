@@ -1,0 +1,12 @@
+.bookmark {
+  width: 70%;
+  list-style-type: none;
+}
+
+.bookmark a {
+  color: black;
+}
+
+.bookmark a:hover {
+  background-color: hotpink;
+}

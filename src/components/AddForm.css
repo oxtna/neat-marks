@@ -1,0 +1,15 @@
+.add-form {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: max-content 400px;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.add-form-label {
+  text-align: right;
+}
+
+.add-form-input {
+  width: 100%;
+}

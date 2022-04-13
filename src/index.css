@@ -1,5 +1,21 @@
+:root {
+  --ui-color: #00b8f0;
+  --ui-focus-color: #00a3d4;
+  --ui-active-color: #008db8;
+  --ui-shadow-color: #00b8f044;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  margin-bottom: 1rem;
+  width: 780px;
+  height: auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
