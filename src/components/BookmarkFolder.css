@@ -1,6 +1,8 @@
 .bookmark-folder {
   list-style-type: none;
-  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .bookmark-folder p {
@@ -8,6 +10,10 @@
 }
 
 .bookmark-folder button {
+  width: 400px;
+  height: 24px;
+  border-radius: 3px;
+  margin: 0;
   border: 0;
   background-color: white;
 }
