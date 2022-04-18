@@ -1,12 +1,25 @@
 .bookmark {
-  width: 70%;
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .bookmark a {
+  width: 400px;
+  height: 24px;
+  line-height: 22px;
+  border-radius: 3px;
+  margin: 0;
+  padding: 0 6px;
   color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bookmark a:hover {
   background-color: hotpink;
+  cursor: pointer;
 }
