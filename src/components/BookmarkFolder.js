@@ -9,7 +9,7 @@ const BookmarkFolder = ({ title, onClick, selectable, checked, onCheckboxChange 
     <li className="bookmark-folder">
       {selectable && checkbox}
       <button onClick={onClick} type="button" title={title}>
-        {title}
+        📁 {title}
       </button>
     </li>
   );
