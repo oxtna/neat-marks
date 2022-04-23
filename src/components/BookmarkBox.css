@@ -6,8 +6,8 @@
   gap: 1rem;
 }
 
-.bookmark-box>.search-box {
-  align-self: start;
+.bookmark-box>.search-box-label {
+  align-self: center;
 }
 
 .bookmark-box>.bookmark-list-container {

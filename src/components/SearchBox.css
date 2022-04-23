@@ -1,5 +1,14 @@
 .search-box {
   width: 100%;
+  border: solid 2px lightgray;
+  border-radius: 5px;
+  outline: 0;
+  transition-duration: 0.1s;
+}
+
+.search-box:active,
+.search-box:focus {
+  border: solid 2px var(--ui-active-color);
 }
 
 .search-box-label {
