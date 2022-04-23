@@ -11,8 +11,8 @@ const flattenTree = async (tree, array = []) => {
       array.push(node);
     }
     else {
-      const children = await chrome.bookmarks.getChildren(node.id);
-      await flattenTree(children, array);
+      const children = await chrome.bookmarks.getChildren(node.id).catch(err => console.error(err));
+      await flattenTree(children, array).catch(err => console.error(err));
     }
   }
   return array;
@@ -40,8 +40,10 @@ const App = () => {
     if (mode !== "normal") {
       return;
     }
-
-    const currentTab = (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
+    const queryResult = await chrome.tabs
+      .query({ active: true, currentWindow: true })
+      .catch(err => console.error(err));
+    const currentTab = queryResult[0];
     setNewBookmarkTitle(currentTab.title);
     setNewBookmarkUrl(currentTab.url);
     if (currentFolder === "0") {
@@ -69,10 +71,10 @@ const App = () => {
     }
 
     if (selected.length > 0) {
-      const bookmarkNodes = await chrome.bookmarks.get(selected);
-      const bookmarks = await flattenTree(bookmarkNodes);
+      const bookmarkNodes = await chrome.bookmarks.get(selected).catch(err => console.error(err));
+      const bookmarks = await flattenTree(bookmarkNodes).catch(err => console.error(err));
       for (const bookmark of bookmarks) {
-        await chrome.tabs.create({ url: bookmark.url });
+        await chrome.tabs.create({ url: bookmark.url }).catch(err => console.error(err));
       }
     }
     setSelected([]);
@@ -86,13 +88,13 @@ const App = () => {
     }
 
     if (selected.length > 0) {
-      const bookmarkNodes = await chrome.bookmarks.get(selected);
+      const bookmarkNodes = await chrome.bookmarks.get(selected).catch(err => console.error(err));
       for (const node of bookmarkNodes) {
         if (node.url) {
-          await chrome.bookmarks.remove(node.id);
+          await chrome.bookmarks.remove(node.id).catch(err => console.error(err));
         }
         else {
-          await chrome.bookmarks.removeTree(node.id);
+          await chrome.bookmarks.removeTree(node.id).catch(err => console.error(err));
         }
       }
     }
@@ -106,10 +108,14 @@ const App = () => {
     }
 
     if (creatingFolder) {
-      await chrome.bookmarks.create({ parentId: newBookmarkFolder, title: newBookmarkTitle, url: null });
+      await chrome.bookmarks
+        .create({ parentId: newBookmarkFolder, title: newBookmarkTitle, url: null })
+        .catch(err => console.error(err));
     }
     else {
-      await chrome.bookmarks.create({ parentId: newBookmarkFolder, title: newBookmarkTitle, url: newBookmarkUrl });
+      await chrome.bookmarks
+        .create({ parentId: newBookmarkFolder, title: newBookmarkTitle, url: newBookmarkUrl })
+        .catch(err => console.error(err));
     }
     setMode("normal");
   };
