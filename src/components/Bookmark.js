@@ -1,3 +1,4 @@
+/* global chrome */
 import Checkbox from './Checkbox';
 import PropTypes from 'prop-types';
 import './Bookmark.css';
@@ -5,12 +6,21 @@ import './Bookmark.css';
 const Bookmark = ({ title, href, selectable, checked, onCheckboxChange }) => {
   const checkbox = <Checkbox checked={checked} onChange={onCheckboxChange} />;
 
+  const onClick = async () => {
+    await chrome.tabs.create({ url: href });
+  };
+
   return (
     <li className="bookmark">
       {selectable && checkbox}
-      <a href={href} target="_blank" rel="external nofollow noopener noreferrer" title={title}>
+      <button
+        onClick={onClick}
+        type="button"
+        title={title}
+        disabled={selectable}
+      >
         {title}
-      </a>
+      </button>
     </li>
   );
 };

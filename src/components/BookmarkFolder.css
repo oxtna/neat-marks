@@ -5,30 +5,37 @@
   gap: 4px;
 }
 
-.bookmark-folder p {
-  margin: 0;
-}
-
 .bookmark-folder button {
   width: 400px;
   height: 24px;
   border-radius: 3px;
-  margin: 0;
   border: 0;
-  background-color: white;
+  margin: 0;
   outline: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+  background-color: white;
   transition-duration: 0.1s;
 }
 
+.bookmark-folder button:disabled {
+  pointer-events: none;
+}
+
 .bookmark-folder button:hover {
+  color: white;
   background-color: var(--ui-color);
   cursor: pointer;
 }
 
 .bookmark-folder button:focus {
+  color: white;
   background-color: var(--ui-focus-color);
 }
 
 .bookmark-folder button:active {
+  color: white;
   background-color: var(--ui-active-color);
 }
