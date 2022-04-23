@@ -1,7 +1,7 @@
 .add-form {
   display: grid;
   justify-content: center;
-  grid-template-columns: max-content 400px;
+  grid-template-columns: max-content 500px;
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -12,4 +12,26 @@
 
 .add-form-input {
   width: 100%;
+  border: solid 2px lightgray;
+  border-radius: 5px;
+  outline: 0;
+  transition-duration: 0.1s;
+}
+
+.add-form-input:active,
+.add-form-input:focus {
+  border: solid 2px var(--ui-focus-color);
+}
+
+.add-form-select {
+  width: 100%;
+  border: solid 2px lightgray;
+  border-radius: 5px;
+  outline: 0;
+  transition-duration: 0.1s;
+}
+
+.add-form-select:active,
+.add-form-select:focus {
+  border: solid 2px var(--ui-focus-color);
 }
