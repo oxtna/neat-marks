@@ -8,8 +8,8 @@ const BookmarkFolder = ({ title, onClick, selectable, checked, onCheckboxChange 
   return (
     <li className="bookmark-folder">
       {selectable && checkbox}
-      <button onClick={onClick} type="button">
-        {title}
+      <button onClick={onClick} type="button" title={title}>
+        📁 {title}
       </button>
     </li>
   );

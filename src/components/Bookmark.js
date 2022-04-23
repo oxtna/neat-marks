@@ -8,7 +8,7 @@ const Bookmark = ({ title, href, selectable, checked, onCheckboxChange }) => {
   return (
     <li className="bookmark">
       {selectable && checkbox}
-      <a href={href} target="_blank" rel="external nofollow noopener noreferrer">
+      <a href={href} target="_blank" rel="external nofollow noopener noreferrer" title={title}>
         {title}
       </a>
     </li>
