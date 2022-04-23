@@ -16,9 +16,19 @@
   margin: 0;
   border: 0;
   background-color: white;
+  outline: 0;
+  transition-duration: 0.1s;
 }
 
 .bookmark-folder button:hover {
-  background-color: hotpink;
+  background-color: var(--ui-color);
   cursor: pointer;
+}
+
+.bookmark-folder button:focus {
+  background-color: var(--ui-focus-color);
+}
+
+.bookmark-folder button:active {
+  background-color: var(--ui-active-color);
 }

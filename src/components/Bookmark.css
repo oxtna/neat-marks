@@ -17,9 +17,19 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  outline: 0;
+  transition-duration: 0.1s;
 }
 
 .bookmark a:hover {
-  background-color: hotpink;
+  background-color: var(--ui-color);
   cursor: pointer;
+}
+
+.bookmark a:focus {
+  background-color: var(--ui-focus-color);
+}
+
+.bookmark a:active {
+  background-color: var(--ui-active-color);
 }
