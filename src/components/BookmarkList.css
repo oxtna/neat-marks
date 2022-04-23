@@ -10,7 +10,8 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
+  border-radius: 6px;
   overflow: hidden;
   overflow-y: scroll;
   height: 100%;
@@ -19,8 +20,22 @@
   padding: 4px 0;
 }
 
+.bookmark-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.bookmark-list::-webkit-scrollbar-thumb {
+  background-color: var(--ui-color);
+  border-radius: 5px;
+}
+
+.bookmark-list::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
 .back-button {
   position: absolute;
   top: 0;
-  left: -40px;
+  left: -45px;
 }
