@@ -1,5 +1,6 @@
 /* global chrome */
 import { useEffect, useState } from 'react';
+import SelectInput from './SelectInput';
 import Checkbox from './Checkbox';
 import PropTypes from 'prop-types';
 import './AddForm.css';
@@ -58,15 +59,14 @@ const AddForm = ({ title, setTitle, url, setUrl, folder, setFolder, creatingFold
       {!creatingFolder && bookmarkInputs}
       {creatingFolder && folderInputs}
       <label className="add-form-label" htmlFor="addFormFolder">Folder: </label>
-      <select
-        className="add-form-select"
+      <SelectInput
         id="addFormFolder"
-        defaultValue={folder}
         value={folder}
+        defaultValue={folder}
         onChange={(e) => setFolder(e.target.value)}
       >
         {folderOptions}
-      </select>
+      </SelectInput>
     </form>
   );
 };
