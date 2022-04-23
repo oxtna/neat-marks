@@ -8,7 +8,7 @@
 
 .search-box:active,
 .search-box:focus {
-  border: solid 2px var(--ui-active-color);
+  border: solid 2px var(--ui-focus-color);
 }
 
 .search-box-label {
