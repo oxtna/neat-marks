@@ -4,7 +4,7 @@ import SearchBox from './SearchBox';
 import PropTypes from 'prop-types';
 import './BookmarkBox.css';
 
-const BookmarkBox = ({ currentFolder, setCurrentFolder, mode, selected, setSelected }) => {
+const BookmarkBox = ({ currentFolder, setCurrentFolder, mode, selected, setSelected, previousFolders, setPreviousFolders }) => {
   const [searched, setSearched] = useState("");
 
   const onSearchChange = (event) => {
@@ -21,6 +21,8 @@ const BookmarkBox = ({ currentFolder, setCurrentFolder, mode, selected, setSelec
         mode={mode}
         selected={selected}
         setSelected={setSelected}
+        previousFolders={previousFolders}
+        setPreviousFolders={setPreviousFolders}
       />
     </div>
   );
@@ -31,7 +33,9 @@ BookmarkBox.propTypes = {
   setCurrentFolder: PropTypes.string.isRequired,
   mode: PropTypes.string.isRequired,
   selected: PropTypes.array.isRequired,
-  setSelected: PropTypes.func.isRequired
+  setSelected: PropTypes.func.isRequired,
+  previousFolders: PropTypes.array.isRequired,
+  setPreviousFolders: PropTypes.func.isRequired
 };
 
 export default BookmarkBox;

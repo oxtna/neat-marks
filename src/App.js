@@ -22,6 +22,7 @@ const App = () => {
   const [mode, setMode] = useState("normal");
   const [selected, setSelected] = useState([]);
   const [currentFolder, setCurrentFolder] = useState("0");
+  const [previousFolders, setPreviousFolders] = useState([]);
   const [newBookmarkTitle, setNewBookmarkTitle] = useState("");
   const [newBookmarkUrl, setNewBookmarkUrl] = useState("");
   const [newBookmarkFolder, setNewBookmarkFolder] = useState("");
@@ -130,6 +131,8 @@ const App = () => {
           mode={mode}
           selected={selected}
           setSelected={setSelected}
+          previousFolders={previousFolders}
+          setPreviousFolders={setPreviousFolders}
         />
       }
       {mode === "add" &&
