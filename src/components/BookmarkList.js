@@ -6,9 +6,17 @@ import Button from './Button';
 import PropTypes from 'prop-types';
 import './BookmarkList.css';
 
-const BookmarkList = ({ currentFolder, setCurrentFolder, searchFor, mode, selected, setSelected }) => {
+const BookmarkList = ({
+  currentFolder,
+  setCurrentFolder,
+  searchFor,
+  mode,
+  selected,
+  setSelected,
+  previousFolders,
+  setPreviousFolders
+}) => {
   const [bookmarks, setBookmarks] = useState([]);
-  const [previousFolders, setPreviousFolders] = useState([]);
 
   useEffect(() => {
     const getBookmarks = async () => {
@@ -99,7 +107,9 @@ BookmarkList.propTypes = {
   searchFor: PropTypes.string.isRequired,
   mode: PropTypes.string.isRequired,
   selected: PropTypes.array.isRequired,
-  setSelected: PropTypes.func.isRequired
+  setSelected: PropTypes.func.isRequired,
+  previousFolders: PropTypes.array.isRequired,
+  setPreviousFolders: PropTypes.func.isRequired
 };
 
 export default BookmarkList;

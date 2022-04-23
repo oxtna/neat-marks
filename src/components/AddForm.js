@@ -10,20 +10,21 @@ const AddForm = ({ title, setTitle, url, setUrl, folder, setFolder, creatingFold
   useEffect(() => {
     const findAllFolders = async () => {
       const _helperFunc = async (nodeID, array) => {
-        const root = (await chrome.bookmarks.getSubTree(nodeID))[0];
+        const subTree = await chrome.bookmarks.getSubTree(nodeID).catch(err => console.error(err));
+        const root = subTree[0];
         for (const node of root.children) {
           if (node.children) {
             array.push(node);
-            await _helperFunc(node.id, array);
+            await _helperFunc(node.id, array).catch(err => console.error(err));
           }
         }
       };
       const newFolders = [];
-      await _helperFunc("0", newFolders);
+      await _helperFunc("0", newFolders).catch(err => console.error(err));
       setFolders(newFolders);
     };
 
-    findAllFolders();
+    findAllFolders().catch(err => console.error(err));
   }, []);
 
   const folderOptions = folders.map(folder => {
