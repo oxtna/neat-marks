@@ -1,3 +1,28 @@
 .color-picker {
   margin-left: auto;
+  appearance: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid 1px lightgray;
+  box-shadow: 0 0 0 0 var(--ui-shadow-color);
+  transition-duration: 0.1s;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  outline: 0;
+}
+
+.color-picker::-webkit-color-swatch {
+  border-radius: 8px;
+  border: solid 1px gray;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 5px;
+}
+
+.color-picker:focus,
+.color-picker:active:focus {
+  box-shadow: 0 0 0 5px var(--ui-shadow-color);
 }
