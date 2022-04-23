@@ -8,6 +8,7 @@
 
 .add-form-label {
   text-align: right;
+  align-self: center;
 }
 
 .add-form-input {
